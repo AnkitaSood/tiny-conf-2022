@@ -1,3 +1,7 @@
 <a routerLink="/cart" class="button fancy-button">
     <i class="material-icons">shopping_cart</i>Checkout
 </a>
+
+<a [routerLink]="['/', { outlets: { help :  'show-docs'} }]" class="button fancy-button">
+    <i class="material-icons">help</i>Docs
+</a>

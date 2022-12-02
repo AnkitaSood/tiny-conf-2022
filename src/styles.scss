@@ -82,6 +82,13 @@ label {
   border: none;
 }
 
+.button-outline {
+  background: none;
+  border: 1px solid cornflowerblue;
+  border-radius: 0.3125rem;
+  color: #616161;
+}
+
 .button:hover, button:hover {
   opacity: 0.8;
   font-weight: normal;

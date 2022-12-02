@@ -5,13 +5,14 @@ import {bootstrapApplication} from "@angular/platform-browser";
 import {ProductListComponent} from "./app/product-list/product-list.component";
 import {provideRouter, Route} from "@angular/router";
 import {HttpClientModule} from "@angular/common/http";
+import {HelpDocsComponent} from "./app/help-docs/help-docs.component";
 
 if (environment.production) {
     enableProdMode();
 }
 
 const routes: Route[] = [
-    {path: '', component: ProductListComponent},
+    {path: 'products-list', component: ProductListComponent},
     {
         path: 'products/:productId', loadComponent: () => import('./app/product-details/product-details.component')
             .then(c => c.ProductDetailsComponent)
@@ -25,8 +26,13 @@ const routes: Route[] = [
             .then(c => c.ShippingComponent)
     },
     {
+        path: 'show-docs',
+        outlet: 'help',
+        component: HelpDocsComponent,
+    },
+    {
         path: '**',
-        redirectTo: '',
+        redirectTo: 'products-list',
         pathMatch: 'full',
     },
 ];
