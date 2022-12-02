@@ -1,7 +1,24 @@
-<a routerLink="/cart" class="button fancy-button">
-    <i class="material-icons">shopping_cart</i>Checkout
-</a>
+<div class="btns-container">
+    <a [routerLink]="[{outlets: {primary: '/', help: null}}]" class="button fancy-button">
+        <i class="material-icons">home</i>Home
+    </a>
 
-<a [routerLink]="['/', { outlets: { help :  'show-docs'} }]" class="button fancy-button">
-    <i class="material-icons">help</i>Docs
-</a>
+    <a routerLink="/cart" class="button fancy-button">
+        <i class="material-icons">shopping_cart</i>Checkout
+    </a>
+
+</div>
+
+<div class="btns-container">
+
+    <a [routerLink]="['/', { outlets: { help :  'show-docs'} }]"
+       class="button fancy-button">
+        <i class="material-icons">help</i>Docs
+    </a>
+
+    <a [routerLink]="['/', { outlets: { help :  'show-image'} }]"
+       class="button fancy-button">
+        <i class="material-icons">help</i>Image
+    </a>
+
+</div>

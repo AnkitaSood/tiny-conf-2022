@@ -5,7 +5,6 @@ import {bootstrapApplication} from "@angular/platform-browser";
 import {ProductListComponent} from "./app/product-list/product-list.component";
 import {provideRouter, Route} from "@angular/router";
 import {HttpClientModule} from "@angular/common/http";
-import {HelpDocsComponent} from "./app/help-docs/help-docs.component";
 
 if (environment.production) {
     enableProdMode();
@@ -28,7 +27,14 @@ const routes: Route[] = [
     {
         path: 'show-docs',
         outlet: 'help',
-        component: HelpDocsComponent,
+        loadComponent: () => import('./app/help-docs/help-docs.component')
+            .then(c => c.HelpDocsComponent),
+    },
+    {
+        path: 'show-image',
+        outlet: 'help',
+        loadComponent: () => import('./app/help-image/help-image.component')
+            .then(c => c.HelpImageComponent)
     },
     {
         path: '**',
